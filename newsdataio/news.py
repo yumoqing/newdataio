@@ -44,9 +44,9 @@ class NewsDataIo(BaseProvider):
 		keyword = q
 		if keyword == '':
 			keyword = None
-		categories = self.newsfeed.array2params(categories)
-		language_str = self.newsfeed.array2params(language)
-		countries_str = self.newsfeed.array2params(countries)
+		categories = self.newsfeed.array2param(categories)
+		language_str = self.newsfeed.array2param(language)
+		countries_str = self.newsfeed.array2param(countries)
 		domains_str = self.newsfeed.array2param(domains)
 		sources = self.newsfeed.array2param(domains)
 		today = curDateString()
