@@ -28,6 +28,7 @@ class NewsDataIo(BaseProvider):
 	def get_article_mapping(self):
 		return {
 			'img_link':'image_url',
+			'author':'creator',
 			'publish_date':'pubDate'
 		}
 	
@@ -45,13 +46,13 @@ class NewsDataIo(BaseProvider):
 		categories = self.newsfeed.array2params(categories)
 		language_str = self.newsfeed.array2params(language)
 		countries_str = self.newsfeed.array2params(countries)
-		domain_str = self.newsfeed.array2param(domains)
+		domains_str = self.newsfeed.array2param(domains)
 		today = curDateString()
 		p = {
 			'apikey':self.appkey,
 			'country':countries_str,
 			'category':categories,
-			'domain':domain_str,
+			'domain':domains_str,
 			'language':language_str,
 			'page':page,
 			'q':keyword
@@ -91,6 +92,7 @@ class NewsDataIo(BaseProvider):
 	def topstory(self, q=None, categories=[],
 						countries=[], 
 						domains=[],
+						sources=[],
 						language=[], 
 						from_date=None,
 						to_date=None,
@@ -109,7 +111,7 @@ class NewsDataIo(BaseProvider):
 			'category':categories, 
 			'country':countries_str,
 			'language':language_str,
-			'domains':domains_str,
+			'domain':domains_str,
 			'from_date':from_date,
 			'to_date':to_date,
 			'page':page,
