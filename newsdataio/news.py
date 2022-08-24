@@ -35,6 +35,7 @@ class NewsDataIo(BaseProvider):
 	def last_news(self, q=None, 
 						categories=[],
 						countries=[],
+						sources=[],
 						domains=[],
 						language=[], 
 						page=0):
@@ -47,6 +48,7 @@ class NewsDataIo(BaseProvider):
 		language_str = self.newsfeed.array2params(language)
 		countries_str = self.newsfeed.array2params(countries)
 		domains_str = self.newsfeed.array2param(domains)
+		sources = self.newsfeed.array2param(domains)
 		today = curDateString()
 		p = {
 			'apikey':self.appkey,
@@ -91,6 +93,7 @@ class NewsDataIo(BaseProvider):
 		
 	def hist_news(self, q=None, categories=[],
 						countries=[], 
+						sources=[],
 						domains=[],
 						sources=[],
 						language=[], 
