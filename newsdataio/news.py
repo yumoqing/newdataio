@@ -93,7 +93,6 @@ class NewsDataIo(BaseProvider):
 		
 	def hist_news(self, q=None, categories=[],
 						countries=[], 
-						sources=[],
 						domains=[],
 						sources=[],
 						language=[], 
