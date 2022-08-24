@@ -53,6 +53,7 @@ class NewsDataIo(BaseProvider):
 			'page':page,
 			'q':keyword
 		}
+		print(url, p)
 		x = hc.get(url, params=p)
 		return x
 
