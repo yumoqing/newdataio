@@ -22,14 +22,13 @@ class NewsDataIo(BaseProvider):
 	def get_result_mapping(self):
 		return {
 			'total':'totalResults',
-			'articles':'articles'
+			'articles':'results'
 		}
 	
 	def get_article_mapping(self):
 		return {
-			'link':'url',
-			'img_link':'urlToImage',
-			'publish_date':'publishedAt'
+			'img_link':'image_url',
+			'publish_date':'pubDate'
 		}
 	
 	def news(self, q=None, 
@@ -51,9 +50,6 @@ class NewsDataIo(BaseProvider):
 			'country':countries_str,
 			'categories':categories,
 			'language':language_str,
-			'from':today,
-			'to':today,
-			'pageSize':100,
 			'page':page,
 			'q':keyword
 		}
