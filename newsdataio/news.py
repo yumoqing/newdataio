@@ -32,7 +32,7 @@ class NewsDataIo(BaseProvider):
 			'publish_date':'pubDate'
 		}
 	
-	def news(self, q=None, 
+	def last_news(self, q=None, 
 						categories=[],
 						countries=[],
 						domains=[],
@@ -89,7 +89,7 @@ class NewsDataIo(BaseProvider):
 		x = hc.get(url, params=p)
 		return x
 		
-	def topstory(self, q=None, categories=[],
+	def hist_news(self, q=None, categories=[],
 						countries=[], 
 						domains=[],
 						sources=[],
